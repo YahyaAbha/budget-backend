@@ -8,7 +8,9 @@ const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://budget-frontend-puce.vercel.app'
+}));
 app.use(express.json());
 
 app.use("/", router);
